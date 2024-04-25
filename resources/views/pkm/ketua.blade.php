@@ -6,7 +6,7 @@
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <form action="/editpkm/ketua/{{$id}}" method="post">
+        <form action="{{secure_url('/editpkm/ketua')}}/{{$id}}" method="post">
             @csrf
             <div class="form-group row" id="isian">
                 <div class="col-sm-6 mb-3 mb-sm-0 mt-2 ml-4 card shadows">
@@ -52,7 +52,7 @@
 @push('script')
 <script>
         var id = document.getElementById("id").value
-        $.get('/ketuas', {pkm:id}, function (data, textStatus, jqXHR) { 
+        $.get(secure_url('/ketuas'), {pkm:id}, function (data, textStatus, jqXHR) { 
             var prod = Object.keys(data)
             console.log(prod.length)
             if(prod.length != 0){
@@ -64,7 +64,7 @@
         function Update(){
             var dt = $('#nidn').val();
             console.log(dt)
-            $.get('/dosens', {q:dt}, function (data, textStatus, jqXHR){
+            $.get(secure_url('/dosens'), {q:dt}, function (data, textStatus, jqXHR){
                 document.getElementById('nama').value = data.nama;
                 document.getElementById('nidn').value = data.nidn;
                 document.getElementById('pend').value = data.pendidikan;

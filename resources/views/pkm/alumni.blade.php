@@ -6,7 +6,7 @@
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <form action="/editpkm/alm/{{$id}}" method="post">
+        <form action="{{secure_url('/editpkm/alm')}}/{{$id}}" method="post">
             @csrf
             <div class="form-group row" id="isian">
                 @foreach($data as $key=>$value)

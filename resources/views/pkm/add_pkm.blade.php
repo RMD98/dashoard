@@ -6,7 +6,7 @@
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <form action="/addpkm" method="post">
+        <form action="{{secure_url('/addpkm')}}" method="post">
             @csrf
             <div class="form-group row">
                 <div class="col-sm-6 mb-3 mb-sm-0 ml-2">

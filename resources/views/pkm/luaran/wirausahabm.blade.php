@@ -6,7 +6,7 @@
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <form action="/editpkm/luaran/wbm/{{$id}}" method="post" enctype="multipart/form-data">
+        <form action="{{secure_url('/editpkm/luaran/wbm')}}/{{$id}}" method="post" enctype="multipart/form-data">
             @csrf
             <div class="form-group row" id="isian">
                 <div class="col-sm-6 mb-3 mb-sm-0 ml-2 mt-2 card shadows">
@@ -22,10 +22,10 @@
                     <p><b>Bukti</b>
                         @if(count($data) != 0)
                             @if($data[0]->bukti !=NULL)
-                                <a href="/fas_down/" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                <a href="{{secure_url('/fas_down/')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="fas fa-download fa-sm text-white-50"></i>
                                 Download</a>
-                                <a href="/fas_file/" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                <a href="{{secure_url('/fas_file/')}}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
                                     <i class="fas fa-eye fa-sm text-white-50"></i>
                                 Show</a>
                                 <input type="file" name="" id="">
